@@ -6,21 +6,21 @@
 # Data In: Name of file
 # Data Out: Name,table number, and seat number
 # Credits: In class
-# Input Files: vertical list of the names in each Computer Science class
+# Input Files:  vertical list of the names in each Computer Science class
 
-# Purpose: Accept a filename from the user.
+# Purpose: Accept a file name from the user
 # Parameters: None
-# Return: Name of the file chosen by the user.
+# Return: Name of the file chosen by the user
 def filename_input():
     filename = input("Please enter the name of the file: ")
-    while filename not in ["yalew.txt", "nweke.txt", "isaacman.txt"]:
+    while filename not in ["yalew.txt", "isaacman.txt", "nweke.txt"]:
         print("Invalid file name. Please enter one of the available files.")
-        filename = input("Please enter the name of the file ")
+        filename = input("Please enter the name of the file: ")
     return filename
 
-# Purpose: Read names from the file and return them as a list.
-# Parameters: Name of the file to read from.
-# Return: List of names read from the file.
+# Purpose: Read names from the specified file and return them as a list
+# Parameters: Name of the file to read from
+# Return: List of names read from the file
 def reading_file(filename):
     data = []
     try:
@@ -30,8 +30,8 @@ def reading_file(filename):
         print("Error reading file. Please make sure the file exists and try again.")
     return data
 
-# Purpose: Assign each name in the list to a specific table and seat.
-# Parameters: List of attendee names.
+# Purpose: Assign each name in the list to a table and seat
+# Parameters: List of attendee names
 # Return: Displays seating assignments
 def assign_seating(names):
     table = 1
@@ -45,9 +45,9 @@ def assign_seating(names):
             table += 1
             seat = 1
 
-# Purpose: Main function to run the program, calling the other functions as needed.
+# Purpose: Main function to run the program
 # Parameters: None
-# Return: None (executes the main flow of the program).
+# Return: None
 def main():
     print("Hi, how are you? The purpose of this program is to assign your name to a table and seat number.")
     filename = filename_input()  # Accept file name
@@ -57,5 +57,3 @@ def main():
 
 # Run the main function
 main()
-
-
