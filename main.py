@@ -13,9 +13,13 @@
 # Return: Name of the file chosen by the user
 def filename_input():
     filename = input("Please enter the name of the file: ")
+    filename = filename.lower()
+    filename = filename.strip( )
     while filename not in ["yalew.txt", "isaacman.txt", "nweke.txt"]:
         print("Invalid file name. Please enter one of the available files.")
         filename = input("Please enter the name of the file: ")
+        filename = filename.lower()
+        filename = filename.strip()
     return filename
 
 # Purpose: Read names from the specified file and return them as a list
@@ -27,8 +31,9 @@ def reading_file(filename):
         with open(filename, 'r') as input_file:
             data = [line.strip() for line in input_file.readlines()]
     except FileNotFoundError:
-        print("Error reading file. Please make sure the file exists and try again.")
+        print("Error reading file. Please make sure the file exists and try again. :) ")
     return data
+
 
 # Purpose: Assign each name in the list to a table and seat
 # Parameters: List of attendee names
